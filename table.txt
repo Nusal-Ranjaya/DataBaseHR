@@ -1,0 +1,113 @@
+CREATE TABLE `personal_data` (
+  `ID` varchar(15) NOT NULL,
+  `first_name` varchar(15) DEFAULT 'NOT NULL',
+  `last_name` varchar(15) NOT NULL DEFAULT 'NOT NULL',
+  `birthday` varchar(15) DEFAULT 'NOT NULL',
+  `NIC_no` varchar(15) DEFAULT 'NOT NULL',
+  `gender` varchar(15) DEFAULT 'NOT NULL',
+  `house_no` varchar(15) DEFAULT NULL,
+  `lane` varchar(15) DEFAULT NULL,
+  `city` varchar(15) DEFAULT NULL,
+  `district` varchar(15) DEFAULT NULL,
+  `province` varchar(15) DEFAULT NULL,
+  `mobile_number` varchar(15) DEFAULT 'NOT NULL',
+  `fixed_number` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ;
+
+CREATE TABLE `user` (
+  `ID` varchar(15) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`ID`,username),
+  foreign key(ID) references personal_data(ID) on delete cascade
+  
+);
+
+CREATE TABLE `title` (
+  `title_ID` varchar(15) NOT NULL,
+  `job` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`title_ID`)
+) ;
+
+CREATE TABLE `status` (
+  `status_ID` varchar(15) NOT NULL,
+  `state` varchar(15) DEFAULT 'NOT NULL',
+  `time` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`status_ID`)
+) ;
+
+CREATE TABLE `salary` (
+  `salary_ID` varchar(20) NOT NULL,
+  `paylevel` varchar(20) DEFAULT NULL,
+  `title_ID` varchar(20) DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`salary_ID`)
+) ;
+
+
+
+CREATE TABLE `organization` (
+  `company_ID` varchar(15) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `head_q` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`company_ID`)
+);
+
+CREATE TABLE `leave_type` (
+  `salary_ID` varchar(15) NOT NULL,
+  `anual` numeric(8,0) DEFAULT NULL,
+  `casual` numeric(4,0) DEFAULT NULL,
+  `nopay` numeric(4,0) DEFAULT NULL,
+  `maternity` numeric(4,0) DEFAULT NULL,
+  PRIMARY KEY (`salary_ID`)
+) ;
+
+CREATE TABLE `leave_count` (
+  `ID` varchar(15) NOT NULL,
+  `anual` decimal(8,0) DEFAULT NULL,
+  `casual` decimal(8,0) DEFAULT NULL,
+  `nopay` decimal(8,0) DEFAULT NULL,
+  `maternity` decimal(8,0) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  foreign key(ID) references personal_data(ID) on delete cascade
+);
+
+
+
+CREATE TABLE `branch` (
+  `branch_ID` varchar(15) NOT NULL,
+  `reg_no` varchar(15) DEFAULT NULL,
+  `city` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`branch_ID`)
+) ;
+
+
+CREATE TABLE `employee` (
+  `ID` varchar(15) NOT NULL,
+  `branch_ID` varchar(15) DEFAULT NULL,
+  `title_ID` varchar(15) DEFAULT NULL,
+  `status_ID` varchar(15) DEFAULT NULL,
+  `salary_ID` varchar(15) DEFAULT NULL,
+  `dept_name` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  foreign key(branch_id) references branch(branch_id) on delete cascade,
+  foreign key(title_id) references title(title_id) on delete cascade,
+  foreign key(status_id) references status(status_id) on delete cascade,
+  foreign key(salary_id) references salary(salary_id) on delete cascade
+);
+
+CREATE TABLE `emergency_reco` (
+  `ID` varchar(15) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `number` varchar(30) NOT NULL,
+  PRIMARY KEY (`ID`),
+  foreign key(ID) references personal_data(ID) on delete cascade
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `admin` (
+  `admin_ID` varchar(20) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`admin_ID`)
+);

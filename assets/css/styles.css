@@ -1,0 +1,19 @@
+body {
+  background: rgb(227,248,227);
+  border: 4.28571px solid var(--bs-border-color) ;
+  backdrop-filter: opacity(0.89) brightness(101%);
+}
+
+.navbar {
+  color: var(--bs-black);
+  --bs-secondary: #6c757d;
+  --bs-secondary-rgb: 108,117,125;
+  position: sticky;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  background: var(--bs-teal);
+}
+
+.btn {
+}
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Admin_Options</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/css/Responsive-Form-Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Form.css">
+</head>
+
+<body style="background: var(--bs-gray-300);">
+    <section>
+        <div>
+            <div></div>
+        </div>
+    </section>
+    <section class="position-relative py-4 py-xl-5">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-7">
+                    <div class="card mb-5">
+                        <div class="card-body bg-info border rounded-0 border-4 border-dark p-sm-5" style="background:var(--bs-cyan);">
+                            <h2 class="text-center mb-4">Add Employee</h2>
+                            <form action = "addemployee.php" method="post">
+                                <div>
+                                    <p><strong>Register Number</strong></p><input class="form-control" type="number" placeholder="Register Number" name="register_number">
+                                </div>
+                                <div style="padding-top: 10px;padding-bottom: 10px;">
+                                    <p><strong>Name</strong></p>
+                                    <div class="d-flex flex-row mb-3"><input class="form-control" type="text" id="name-2"  placeholder="First Name" name="first_name" style="margin-right: 2px;"><input class="form-control" type="text" id="name-3" name="last_name" placeholder="Last Name"></div>
+                                </div>
+                                <div>
+                                    <p><strong>NIC no</strong></p><input class="form-control" type="text" name="NIC" style="margin-top: -7px;margin-bottom: 13px;">
+                                </div>
+                                <div style="padding-top: 0px;">
+                                    <p><strong>Birth Date</strong></p><input class="form-control" type="date" name="birth_day">
+                                </div>
+                                <div style="padding-top: 3px;padding-bottom: 3px;">
+                               <div class="form-group" style="padding-top: 10px;padding-bottom: 10px;"><label class="form-label"><strong>Gender</strong></label>
+                                <select class="form-select" name="gender">
+        
+                                 <option value="Male">Male</option>
+                                 <option value="Female">Female</option>
+    </select></div>
+                                </div>
+                                <div style="padding-top: 0px;">
+                                    <p><strong>Address</strong></p>
+                                    <div>
+                                        <p style="padding-bottom:0px;">No&nbsp;&nbsp;</p><input class="form-control" type="text" placeholder="House No" name="house_no" style="padding-bottom: 8px;margin-bottom: 3px;margin-top: -16px;">
+                                    </div>
+                                    <div style="margin-top: 2px;margin-bottom: 2px;">
+                                        <p style="margin-top: 1px;">Lane</p><input class="form-control" type="text" placeholder="Lane" name="lane" style="margin-bottom: 3px;margin-top: -16px;">
+                                        <div>
+                                            <p style="margin-top: 4px;">City</p><input class="form-control" type="text" placeholder="City" name="city" style="padding-bottom: 3px;margin-bottom: 3px;margin-top: -17px;">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p style="margin-top: 8px;">District</p><input class="form-control" type="text" placeholder="District" name="district" style="padding-bottom: 2px;margin-bottom: 3px;margin-top: -17px;">
+                                    </div>
+                                    <p style="margin-top: 7px;">Province</p>
+                                    
+                                        <div class="form-group"><select class="form-select" name="province" style="margin-bottom: 3px;margin-top: -17px;">
+                                                <option value="Province">Province</option>
+                                                <option value="Southern">Southern</option>
+                                                <option value="Central">Central</option>
+                                                <option value="North Central">Noth Central</option>
+                                                <option value="Nothern">Norhthen</option>
+                                                <option value="Eastern">Eastern</option>
+                                                <option value="Western">North Western</option>
+                                                <option value="Uva">Uva</option>
+                                                <option value="Sabaragamuva">Sabaragamuva</option>
+                                                <option value="Western">Western</option>
+                                            </select></div>
+                                   
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <p><strong>Contact Details</strong></p>
+                                    <p>Mobile Phone No</p><input class="form-control" type="tel" placeholder="Mobile" name="mobile" style="margin: 2px 0px 0px;margin-top: -18px;margin-bottom: 2px;">
+                                    <p>Land Phone No</p><input class="form-control" type="tel" placeholder="Land-Line" name="land_line" style="padding-top: 4px;padding-bottom: 4px;margin-top: -15px;margin-bottom: 5px;">
+                                    <p>Emergency Contact No</p><input class="form-control" type="tel" placeholder="Emergency " name="emergency" style="margin-top: -17px;">
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <p><strong>Employee Details</strong></p>
+                                    <p>Branch ID</p><input class="form-control" type="number" placeholder="Brach ID" name="branch_id" style="margin-top: -16px;margin-bottom: 3px;">
+                                    <p>Title ID</p><input class="form-control" type="number" placeholder="Title ID" name="title_id" style="margin-top: -18px;margin-bottom: 0px;">
+                                    <p>Status ID</p><input class="form-control" type="number" placeholder="Status ID" name="status_id" style="margin-top: -18px;margin-bottom: 2px;">
+                                    <p>Salary ID</p><input class="form-control" type="number" placeholder="Salary ID" name="salary_id" style="margin-top: -16px;margin-bottom: 2px;">
+                                    <p>Department</p><input class="form-control" type="text" placeholder="Department" name="department" style="margin-top: -16px;margin-bottom: 4px;">
+                                    <p>Supervisor ID</p><input class="form-control" type="number" placeholder="Supervisor ID" name="sup_id" style="margin-top: -17px;margin-bottom: 0px;">
+                                </div>
+                                <div><button class="btn btn-primary link-light border rounded-pill border-2 border-dark d-block w-100" type="submit" style="margin-top: 23px;">ADD</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
