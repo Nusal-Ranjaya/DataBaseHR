@@ -1,11 +1,13 @@
 <?php
+session_start();
+$connection = mysqli_connect('localhost','root','','project_hr');
 //echo 'login success';
 //object oriented style.
-$username = $_POST['user'];
-$password = $_POST['password'];
+$username = mysqli_real_escape_string($connection,$_POST['user']);
+$password = mysqli_real_escape_string($connection,$_POST['password']);
 //echo $username;
 // establish a connection
-$connection = mysqli_connect('localhost','root','MyNewPass','hrm');
+
 if(!$connection)
     die("Failed to connect :".$connection->mysqli_connect_error);
 else{
@@ -18,7 +20,9 @@ else{
         //otherwise we can't get the result for enumeration or anything result must have at least one row
          $data = $stmt_result->fetch_assoc(); //give the associative rows
          if($data['password'] == $password){
-            header("Location: admin.php");
+            $_SESSION['user']=$username;
+            $_SESSION['password']=$password;
+            header("Location: Admin1.php");
             exit();
          }
          else{
@@ -34,23 +38,31 @@ else{
        if($stmt_result->num_rows>0){
        while($row = $stmt_result->fetch_assoc()){ //fetch one row by row in result
            if($row['password']==$password){
+              $_SESSION['user']=$username;
+              
+              $_SESSION['password']=$password;
+              
                $ID = $row['ID'];
+               $_SESSION['ID']=$ID;
                $stmt->close();
-               $query = "SELECT title_ID FROM employee WHERE ID = '{$ID}'";
+               $query1 = "SELECT ID,title_ID FROM employee WHERE ID = '{$ID}'";
+               $query2 = "SELECT sup_ID from employee WHERE sup_ID = '{$ID}'";
                // make query and get result
-               $result = mysqli_query( $connection,$query);
+               $result1 = mysqli_query( $connection,$query1);
+               $result2 = mysqli_query( $connection,$query2);
                //fetch the result rows as an array
-               $resultArray = mysqli_fetch_assoc($result); // assoc represent array 
+               $resultArray1 = mysqli_fetch_assoc($result1); // assoc represent array 
+               $resultArray2 = mysqli_fetch_assoc($result2); // assoc represent array 
                //header("Location:user.php");
-               $title = $resultArray['title_ID'];
-               if($title == "1"){
-                header("Location:HR.html");
+               $title = $resultArray1['title_ID'];
+               if($title == "1" && $ID){
+                header("Location:HRmanger.php");
                 exit();
-               }else if($title =="2" || $title=="3"){
+               }else if($ID == $resultArray2['sup_ID']){
                 header("Location:supervisor.php");
                 exit();
-               }else{
-                header("Location:user.php");
+               }else {
+                header("Location:Employee.php");
                 exit();
                }
            }

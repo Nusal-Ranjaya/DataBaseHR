@@ -1,19 +1,20 @@
 <?php
     session_start();
-    $ID3 = $_SESSION['ID'];
+
 ?>
 <?php
     if(!isset($_SESSION['user'])){
         header('location:login.php');
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en" style="height: auto;background: #00D7FF;">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Superviser</title>
+    <title>Employee</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/checkbox-checkbox.css">
     <link rel="stylesheet" href="assets/css/checkbox.css">
@@ -30,12 +31,11 @@
         <div class="container"><img src="assets/img/letter_j_ol8xz0y402rg_64.png" width="34" height="36"><a class="navbar-brand d-flex align-items-center" href="#"><span style="margin-left: 9px;font-weight: bold;display: block;">Jupiter Apparels<br></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-3">
                 <ul class="navbar-nav mx-auto">
-                    
-                </ul><a class="btn btn-dark border rounded-pill border-1 border-dark" type="button" href="login.php">Log out</a>
+                </ul><a class="btn btn-dark border rounded-pill border-1 border-dark" type="button" href="logout.php">Log out</a>
             </div>
         </div>
     </nav>
-    <h1 style="margin-top: 20px;margin-bottom: 10px;text-align: center;border-style: none;">Supervisor</h1>
+    <h1 style="margin-top: 20px;margin-bottom: 10px;text-align: center;border-style: none;">Employee</h1>
     <section>
         <div></div>
     </section>
@@ -44,21 +44,16 @@
     </div>
     <div class="row" style="width: 500px;position: static;display: inline;padding-right: 40px;padding-left: 50px;">
         <div class="col d-lg-flex flex-grow-1 justify-content-lg-center">
-            <div class="container d-sm-flex d-lg-flex justify-content-sm-center justify-content-lg-center" style="height: 600px;max-width: 550px;margin-top: 40px;background: var(--bs-body-bg);border-color: var(--bs-btn-active-color);border-radius: 12px;">
+            <div class="container d-sm-flex d-lg-flex justify-content-sm-center justify-content-lg-center" style="height: 320px;max-width: 550px;margin-top: 40px;background: var(--bs-body-bg);border-color: var(--bs-btn-active-color);border-radius: 12px;">
                 <div class="row" style="margin-top: 20px;margin-bottom: 20px;">
-                    <div class="col" style="margin-top: 0px;margin-bottom: 0px;"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 15px;margin-bottom: 50px;" data-bs-target="untitled.html" href="superviser_leave_details.php">View Employee Leave Details</a>
+                    <div class="col" style="margin-top: 0px;margin-bottom: 0px;"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 15px;margin-bottom: 50px;" data-bs-target="untitled.html" href="view_personal_info.php">View Personal Information</a>
                         <div class="row">
-                            <div class="col"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 20px;margin-bottom: 50px;" href="report_choice.html">Generate Report</a></div>
+                            <div class="col"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 20px;margin-bottom: 50px;" href="leaveform.php">Add Leave</a></div>
                         </div>
                         <div class="row">
-                            <div class="col"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 20px;margin-bottom: 50px;" href="leaveform.php">Add a Leave</a></div>
+                            <div class="col"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 20px;margin-bottom: 30px;" href="leave_details_employee.php">View Leave Details</a></div>
                         </div>
-                        <div class="row">
-                            <div class="col"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 20px;margin-bottom: 50px;" href="view_personal_info.php">My Personal Info</a></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><a class="btn btn-primary" type="button" style="border-radius: 13px;max-width: 300px;width: 300px;margin-top: 20px;margin-bottom: 50px;" href="leave_details_employee.php">My Leave Details</a></div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

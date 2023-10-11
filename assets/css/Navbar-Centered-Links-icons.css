@@ -2,8 +2,8 @@
   --bs-icon-size: .75rem;
   display: flex;
   flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   font-size: var(--bs-icon-size);
   width: calc(var(--bs-icon-size) * 2);
   height: calc(var(--bs-icon-size) * 2);
@@ -53,5 +53,12 @@
 
 .bs-icon.bs-icon-circle {
   border-radius: 50%;
+}
+
+.btn:hover {
+  transition-delay: 0.13s;
+  color: #000000;
+  background-color: var(--bs-info);
+  border-color: var(--bs-info);
 }
 

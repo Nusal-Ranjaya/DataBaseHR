@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +30,8 @@
                         <div class="mb-3"></div>
                         <div class="mb-3"><input class="form-control" type="text" placeholder="Username" name = "user" style="margin-top: 19px;margin-bottom: 19px;">
                         <input class="form-control" type="password" name="password" placeholder="Password" name = "password"></div>
-                        <div class="mb-3"><button class="btn btn-dark border rounded-pill d-block w-100" type="submit">Login</button><button class="btn active" type="button" style="border-style: none;"><span style="color: rgb(108, 117, 125);">Forgot your password?</span><br></button></div>
+                        <div class="mb-3">
+                            <button class="btn btn-dark border rounded-pill d-block w-100" type="submit" name="submit">Login</button><button class="btn active" type="button" style="border-style: none;"><span style="color: rgb(108, 117, 125);">Forgot your password?</span><br></button></div>
                     </form>
                 </div>
             </div>
